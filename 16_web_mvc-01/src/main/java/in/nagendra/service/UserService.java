@@ -9,8 +9,10 @@ public interface UserService {
 	public boolean saveData(User user);
 
 	public List<User> getAllUsers();
-
 	
+	public boolean deleteUser(Integer uid);
+
+	 User getUserById(Integer uid);
 	
 	
 }

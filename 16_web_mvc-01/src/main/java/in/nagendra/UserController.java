@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import in.nagendra.entity.User;
 import in.nagendra.service.UserService;
@@ -49,6 +50,34 @@ public class UserController {
 		model.addAttribute("users" ,allUsers);
 		return "users";
 	}
+	
+	 @GetMapping("/edit")
+	    public String editUser(@RequestParam("uid") Integer uid, Model model) {
+		 
+	        User user = userService.getUserById(uid);
+	        
+	        model.addAttribute("user", user);
+	        
+	        return "form"; 
+	    }
+	
+	 
+	 
+	 @GetMapping("/delete")
+	    public String deleteUser(@RequestParam("uid") Integer uid, Model model) {
+		 
+	        boolean isDeleted = userService.deleteUser(uid);
+	        
+	        if (isDeleted) {
+	        	
+	            model.addAttribute("smsg", "User deleted successfully");
+	            
+	        } else {
+	        	
+	            model.addAttribute("emsg", "User could not be deleted");
+	        }
+	        return "redirect:/users"; 
+	    }
 	
 	
 
