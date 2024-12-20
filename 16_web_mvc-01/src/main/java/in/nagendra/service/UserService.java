@@ -12,7 +12,10 @@ public interface UserService {
 	
 	public boolean deleteUser(Integer uid);
 
-	 User getUserById(Integer uid);
+    public User getUserById(Integer uid);
+
+	void sendEmail(String email, String name);
 	
+    
 	
 }

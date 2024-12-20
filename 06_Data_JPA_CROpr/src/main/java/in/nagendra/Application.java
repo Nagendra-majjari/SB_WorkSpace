@@ -15,9 +15,20 @@ public class Application {
 		
 		UserService us = ctxt.getBean(UserService.class);
 		
-		us.saveUser();
 		
-		us.saveUsers();
+//		us.findBygender();
+//		us.saveUser();
+		
+//		us.saveUsers();
+		
+//		us.getAllUsers();
+		
+//		us.getUserById(1001);
+		
+//		us.getAllUsersById(asList);
+		
+		us.getValues();
+		
 		
 		
 	}

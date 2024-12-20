@@ -27,12 +27,12 @@ public class User {
 	private String gender;
 	private String country;
 
-//	private LocalDate localdate;
+
 
 	@CreationTimestamp
 	@Column(updatable=false)
 	private LocalDate createdate;
-//	private UpdateDate local;
+
 
 	@UpdateTimestamp
 	@Column(insertable=false)
